@@ -108,7 +108,10 @@ class DetailScreen extends HookWidget {
   ) {
     return state is MovieDetailSuccessState
         ? () {
-            url_launcher.launchUrl(Uri.parse(state.model.imdbUrl));
+            url_launcher.launchUrl(
+              Uri.parse(state.model.imdbUrl),
+              mode: url_launcher.LaunchMode.externalApplication,
+            );
           }
         : null;
   }
